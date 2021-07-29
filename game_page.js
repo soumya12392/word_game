@@ -13,9 +13,11 @@ document.getElementById("player2_score").innerHTML = player2_score;
 document.getElementById("player_question").innerHTML = "Question Turn - " + player1_name;
 document.getElementById("player_answer").innerHTML = "Answer Turn - " + player2_name;
 
+var word;
+
 function send() {
     var get_word = document.getElementById("word").value;
-    var word = get_word.toLowerCase();
+    word = get_word.toLowerCase();
     console.log("Word in lowercase = " + word);
 
     var charAt1 = word.charAt(1);
@@ -42,16 +44,15 @@ function send() {
     document.getElementById("word").value = "";
 }
 
-var get_word = document.getElementById("word").value;
-var word = get_word.toLowerCase();
-
 var question_turn = "player_1";
 var answer_turn = "player_2";
 
 function check() {
+
     var get_answer = document.getElementById("input_check_box").value;
     var answer = get_answer.toLowerCase();
     console.log("Answer in lowercase = " + answer);
+    console.log(word);
 
     if (answer == word) {
         if(answer_turn == "player_1") {
